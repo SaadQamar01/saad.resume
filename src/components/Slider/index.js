@@ -6,19 +6,20 @@ import Dots from "./Dots";
 const Slider = (
     {
         classNames,
-        images
+        images,
+        items
     }
 ) => {
     const imageRef = useRef();
     const [img, setImg] = useState(images[0]);
     const [aItem, setAItem] = useState(0);
-
+    console.log(images.length)
 
     const handleImageChange = (e) => {
 
-        let  clientX;
+        let clientX;
 
-        if(e.type === 'touchmove') {
+        if (e.type === 'touchmove') {
             clientX = e.touches[0].clientX;
         } else {
             clientX = e.clientX;
@@ -52,7 +53,7 @@ const Slider = (
     }
 
     return (
-        <div ref={imageRef} className={classNames} style={{position: 'relative'}}>
+        <div ref={imageRef} className={classNames} style={{ position: 'relative' }}>
             <LazyLoadImage
                 src={img}
                 alt="works"
@@ -61,8 +62,8 @@ const Slider = (
                 onMouseOut={handleMouseOut}
                 onTouchMove={handleImageChange}
                 onTouchEnd={handleMouseOut}
-                />
-            <Dots len={images.length} activeItem={aItem} changeItem={changeImage} />
+            />
+                <img src={images} alt="Logo" activeItem={aItem} changeItem={changeImage} style={{ width: 145, height: 100 , objectFit:"contain"}} />
         </div>
     );
 };

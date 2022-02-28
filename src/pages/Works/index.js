@@ -14,7 +14,7 @@ const Works = () => {
         setSelectedProjects(projects.filter(p => p.type === type));
         setSelectedType(type);
     }
-
+// console.log(...item)
 
     return (
         <div className="page" id="works">
@@ -23,8 +23,8 @@ const Works = () => {
             </Title>
             <WorksMenu
                 items={[
-                    // 'react',
                     'angular',
+                    'react',
                     'react-native',
                     'ionic'
                 ]}

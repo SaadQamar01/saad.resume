@@ -23,25 +23,25 @@ const routes = [
 ]
 
 function App() {
-  return (
-      <>
-          <BackToTop />
-        <div className="page-wrap">
-            <BgBubbles />
-            <Router>
-                <div className="container">
-                    <Menu/>
-                    <Profile/>
-                    <AnimatedRoutes />
-                </div>
-            </Router>
-        </div>
-      </>
-  );
+    return (
+        <>
+            <BackToTop />
+            <div className="page-wrap">
+                <BgBubbles />
+                <Router>
+                    <div className="container">
+                        <Menu />
+                        <Profile />
+                        <AnimatedRoutes />
+                    </div>
+                </Router>
+            </div>
+        </>
+    );
 }
 
-const  AnimatedRoutes = withRouter(({location}) =>
-     <TransitionGroup className="transition-wrapper">
+const AnimatedRoutes = withRouter(({ location }) =>
+    <TransitionGroup className="transition-wrapper">
         <CSSTransition
             classNames="transition"
             timeout={1000}
@@ -50,16 +50,16 @@ const  AnimatedRoutes = withRouter(({location}) =>
         >
             <Switch>
                 <Route exact path="/">
-                    <About/>
-                </Route>
-                <Route exact path="/resume">
-                    <Resume/>
+                    <About />
                 </Route>
                 <Route exact path="/works">
-                    <Works/>
+                    <Works />
+                </Route>
+                <Route exact path="/resume">
+                    <Resume />
                 </Route>
                 <Route exact path="/contact">
-                    <Contact/>
+                    <Contact />
                 </Route>
             </Switch>
         </CSSTransition>
